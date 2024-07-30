@@ -6,7 +6,14 @@ while True:
     print("2) Exit")
     choice = int(input("Enter the choice: "))
     if choice == 1:
-        decimal_number = int(input("Enter your number: "))
+        while True:
+            decimal_number = input("Enter your number: ")
+            if decimal_number.isdigit():
+                decimal_number = int(decimal_number)
+                break
+            else:
+                print("Please enter the numbers")
+
         binary_number = decimal_to_binary(decimal_number)
         print(f"The decimal number {decimal_number} into binary number is {binary_number}")
     elif choice == 2:
